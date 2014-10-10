@@ -1,47 +1,52 @@
 Rails.application.routes.draw do
-  get 'main/contact_information'
+    
+    match '/contact_information', to:'main#contact_information', via: 'get'
+    
+    match '/business_scope', to: 'main#business_scope', via:'get'
 
-  get 'main/business_scope'
+    match '/index', to:'main#index', via:'get'
 
-  get 'main/index'
+    match '/about', to:'main#about', via:'get'
 
-  get 'main/about'
+    match '/contact', to: 'main#contact', via:'get'
 
-  get 'main/contact'
+    match '/our_team', to: 'main#our_team', via:'get'
 
-  get 'main/our_team'
+    match 'search_bar', to:'main#search_bar', via:'get'
 
-  get 'main/search_bar'
+    match '/downloads', to:'main#downloads', via:'get'
 
-  get 'main/downloads'
+    match '/our_studies', to:'main#our_studies', via:'get'
 
-  get 'main/our_studies'
+    match '/data_transmission', to:'main#data_transmission', via:'get'
 
-  get 'main/data_transmission'
+    match '/our_sponsors', to:'main#our_sponsors', via:'get'
 
-  get 'main/our_sponsors'
+    match '/research', to:'main#research', via:'get'
 
-  get 'main/research'
+    match '/publications',to:'main#publications', via:'get'
 
-  get 'main/publications'
+    match '/business_scope',to:'contact_information#business_scope', via:'get'
+    
+    
+    #ARE THESE DUPLICATIONS BELOW? DON'T UNDERSTAND
+    get '/contact_information/index'
 
-  get 'contact_information/business_scope'
+    get 'contact_information/about'
 
-  get 'contact_information/index'
+    get 'contact_information/contact'
+    
+    get 'contact_information/our_team'
 
-  get 'contact_information/about'
+    get 'contact_information/search_bar'
 
-  get 'contact_information/contact'
+    get 'contact_information/downloads'
 
-  get 'contact_information/our_team'
+    get 'contact_information/our_studies'
 
-  get 'contact_information/search_bar'
-
-  get 'contact_information/downloads'
-
-  get 'contact_information/our_studies'
-
-  get 'contact_information/data_transmission'
+    get 'contact_information/data_transmission'
+  
+  
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
