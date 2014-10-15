@@ -26,7 +26,9 @@ Rails.application.routes.draw do
 
     match '/publications',to:'main#publications', via:'get'
 
-    match '/business_scope',to:'contact_information#business_scope', via:'get'
+   // match '/business_scope',to:'contact_information#business_scope', via:'get'
+    
+    get 'contact_information/business_scope'
     
     
     #ARE THESE DUPLICATIONS BELOW? DON'T UNDERSTAND
