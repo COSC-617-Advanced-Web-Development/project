@@ -29,7 +29,6 @@ Rails.application.routes.draw do
     match '/business_scope',to:'contact_information#business_scope', via:'get'
     
     
-    #ARE THESE DUPLICATIONS BELOW? DON'T UNDERSTAND
     get '/contact_information/index'
 
     get 'contact_information/about'
