@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
     
+  devise_for :users
     match '/contact_information', to:'main#contact_information', via: 'get'
     
     match '/business_scope', to: 'main#business_scope', via:'get'
@@ -31,22 +32,7 @@ Rails.application.routes.draw do
     get 'contact_information/business_scope'
     
     
-    #ARE THESE DUPLICATIONS BELOW? DON'T UNDERSTAND
-    get '/contact_information/index'
 
-    get 'contact_information/about'
-
-    get 'contact_information/contact'
-    
-    get 'contact_information/our_team'
-
-    get 'contact_information/search_bar'
-
-    get 'contact_information/downloads'
-
-    get 'contact_information/our_studies'
-
-    get 'contact_information/data_transmission'
   
   
 
@@ -55,6 +41,7 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root :to =>"main#index"
+  resources :main
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
