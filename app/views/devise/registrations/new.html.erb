@@ -5,15 +5,20 @@
         <h2 class="form-signin-heading">Sign Up</h2>
         <h3> Enter your email address</h3>
         <%= f.email_field :email, autofocus: true, :class=>'form-control'%>
+
+      <h3>Enter your username</h3>
+        <%= f.email_field :username, autofocus: true, :class=>'form-control' %>
       <h3> Enter your first name</h3>
         <%= f.text_field :first_name, autofocus: true, :class=>'form-control'%>
       <h3> Enter your last name</h3>
         <%= f.text_field :last_name, autofocus: true, :class =>'form-control'%>
-        <% if @validatable %><i>(<%= @minimum_password_length %> characters minimum)</i><% end %>
+
       <h3> Enter your password</h3>
         <%= f.password_field :password, autocomplete: "off", :class=>'form-control'%>
+      <% if @validatable %><i>(<%= @minimum_password_length %> characters minimum)</i><% end %>
       <h3> Enter your password again</h3>
         <%= f.password_field :password_confirmation, autocomplete: "off", :class=>'form-control'%>
+
       	<%= f.submit "Sign Up", :class=>'btn btn-lg btn-primary btn-block'%>
       	<%= render "devise/shared/links" %>
       <%end%>
