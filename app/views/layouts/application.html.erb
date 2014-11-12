@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= content_for?(:title) ? yield(:title) : "GroupProject" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "Hopkins Image Submission Lab" %></title>
     <%= csrf_meta_tags %>
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
@@ -45,17 +45,21 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">Group Project</a>
+        <a class="navbar-brand" href="#">Hopkins Image Submission Lab</a>
         <div class="navbar-collapse collapse navbar-responsive-collapse">
           <ul class="nav navbar-nav">
-            <li><%= link_to "Link1", "/path1"  %></li>
-            <li><%= link_to "Link2", "/path2"  %></li>
-            <li><%= link_to "Link3", "/path3"  %></li>
+            <li><%= link_to "About", main_about_path  %></li>
+            <li><%= link_to "Business Scope", main_business_scope_path  %></li>
+            <li><%= link_to "Contact", main_contact_path  %></li>
+            <li><%= link_to "Contact Information", main_contact_information_path  %></li>
+            <li><%= link_to "Data Transmission", main_data_transmission_path  %></li>
+            <li><%= link_to "Home", main_index_path  %></li>
+            <li><%= link_to "Our Sponsors", main_our_sponsors_path %></li>
           </ul>
           <p class="navbar-text pull-right">
           		<%if user_signed_in? %>
           			Logged in as <strong><%= current_user.email %> Last Logged in at <%= current_user.last_sign_in_at %></strong>
-          			<%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+                <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
           		<%else%>
           			<%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
   					<%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
@@ -65,7 +69,7 @@
       </div>
     </div>
 
-    <div class="container" id="main_container"">
+    <div class="container" id="main_container">
       <div class="row">
         <div class="col-lg-9">
           <%= bootstrap_flash %>
@@ -75,7 +79,7 @@
       </div><!--/row-->
 
       <footer>
-        <p>&copy; Company 2014</p>
+        <p>&copy; Johns Hopkins Image Submission Lab 2014</p>
       </footer>
 
     </div> <!-- /container -->

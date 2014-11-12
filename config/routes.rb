@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
     
+  get 'submission/new'
+
+  get 'submission/view'
+
+  get 'submission/delete'
+
   devise_for :users
     match '/contact_information', to:'main#contact_information', via: 'get'
     
@@ -33,8 +39,28 @@ Rails.application.routes.draw do
     
     
 
-  
-  
+
+ # for the generic main controller that everybody can access
+  get '/main/about', to: 'main#about'
+  get '/main/business_scope', to: 'main#business_scope'
+  get '/main/contact', to: 'main#contact'
+  get '/main/contact_information', to: 'main#contact_information'
+  get '/main/data_transmission', to: 'main#data_transmission'
+  get '/main/downloads', to: 'main#downloads'
+  get '/main/index', to: 'main#index'
+  get '/main/our_sponsors', to: 'main#our_sponsors'
+  get '/main/our_studies', to: 'main#our_studies'
+  get '/main/our_team', to: 'main#our_team'
+  get '/main/publications', to: 'main#publications'
+  get '/main/research', to: 'main#research'
+  get '/main/search_bar', to: 'main#search_bar'
+
+  #for the controller that only each specific user can access
+
+
+  get '/submission/delete', to: 'submission#delete'
+  get '/submission/new', to: 'submission#new'
+  get '/submission/view', to: 'submission#view'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
