@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
     
+  devise_for :admins
   get 'submission/new'
 
   get 'submission/view'
